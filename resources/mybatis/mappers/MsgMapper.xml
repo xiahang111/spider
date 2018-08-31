@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="xia.mapper.MsgMapper">
+  
+  <insert id="insertMsg" parameterType="java.util.List">
+  	INSERT INTO msg (JobPost,JobPlace,JobEdu,JobSalary,JobDec) VALUES 
+  	<foreach collection="list" item="item" index="index" separator=",">
+  		(
+  		#{item.JobPost},
+  		#{item.JobPlace},
+  		#{item.JobEdu},
+  		#{item.JobSalary},
+  		#{item.JobDec}
+  		
+  		)
+  	</foreach>
+  </insert>
+  	
+  </mapper>
